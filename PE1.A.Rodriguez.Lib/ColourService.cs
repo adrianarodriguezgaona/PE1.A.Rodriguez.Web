@@ -21,6 +21,9 @@ namespace PE1.A.Rodriguez.Lib
             //IEnumerable<string> grijsColors = GenerateGreyScales(10);
             foreach (string grijs in GenerateGreyScales(10))
                 Console.WriteLine(grijs);
+           
+            foreach (string colores in GenerateCssColours(10, ColourVariant.Reddish)) 
+                Console.WriteLine(colores);
         }
 
         //public ColourVariant Color { get; set; }
@@ -50,10 +53,53 @@ namespace PE1.A.Rodriguez.Lib
                 yield return rgb;
 
             }
+        }
+        public static IEnumerable<string> GenerateCssColours(int ammountOfColours, ColourVariant colourVariant )
+        {
+            int aantalVarianten = Enum.GetNames(typeof(ColourVariant)).Length;
+
+            for (int i = 0; i < ammountOfColours; i++)
+            {
+                //for (int j = 0; j < aantalVarianten ; j++)
+
+                //{
+
+
+                //}
+
+                if (colourVariant == ColourVariant.Blueish)
+                {
+                    int waardeBlue = rnd.Next(128, 256);
+                    int redEnGreen = rnd.Next(0, waardeBlue/2);
+                    string rgb = "rgb(" + redEnGreen + "," + redEnGreen + "," + waardeBlue+ ")";
+                    yield return rgb;
+                }
+                if(colourVariant == ColourVariant.Greenish)
+                {
+                    int waardeGroen = rnd.Next(128, 256);
+                    int redEnBlauw = rnd.Next(0, waardeGroen / 2);
+
+                    string rgb = "rgb(" + redEnBlauw + "," + waardeGroen + "," + redEnBlauw + ")";
+
+                    yield return rgb;
+                }
+
+                if (colourVariant == ColourVariant.Reddish)
+                {
+                    int waardeRood = rnd.Next(128, 256);
+                    int groenEnBlauw = rnd.Next(0, waardeRood/2);
+
+                    string rgb = "rgb(" + waardeRood + "," + groenEnBlauw + "," + groenEnBlauw + ")";
+
+                    yield return rgb;
+                }
+
+            }
 
         }
 
-        
+
+
 
     }
 }
