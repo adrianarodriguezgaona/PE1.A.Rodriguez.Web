@@ -6,7 +6,7 @@ namespace PE1.A.Rodriguez.Lib
 {
 
    
-    class ColourService
+    public class ColourService
     {
 
 
