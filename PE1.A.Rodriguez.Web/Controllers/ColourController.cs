@@ -10,13 +10,10 @@ namespace PE1.A.Rodriguez.Web.Controllers
 {
     public class ColourController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int amountOfColours = 10)
         {
             var cssColours = new ColourService();
-            //IEnumerable<string> colors = ColourService.GenerateCssColours(10);
-            //IEnumerable<string> grijsColors = ColourService.GenerateGreyScales(10);
-            //IEnumerable<string> redColors = ColourService.GenerateCssColours(10,ColourService.ColourVariant.Reddish);
-
+           
             var stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"<h2>10 kleuren</h2>");
             foreach (string s in ColourService.GenerateCssColours(10))
@@ -28,7 +25,7 @@ namespace PE1.A.Rodriguez.Web.Controllers
             {
                 stringBuilder.AppendLine($"<div style =\"width:75px; height:50px; background:{grijs} ; display:inline-block;\"></div>");
             }
-            stringBuilder.AppendLine($"<h2>Kleur variaties (Rood, Groen en Blauw</h2>");
+            stringBuilder.AppendLine($"<h2>Kleur variaties (Rood, Groen en Blauw)</h2>");
 
             foreach (string rood in ColourService.GenerateCssColours(10, ColourService.ColourVariant.Reddish))
             {
@@ -44,8 +41,6 @@ namespace PE1.A.Rodriguez.Web.Controllers
             {
                 stringBuilder.AppendLine($"<div style =\"width:75px; height:50px; background:{rood} ; display:inline-block;\"></div>");
             }
-
-
 
             return Content(stringBuilder.ToString(), "text/html");
         }
