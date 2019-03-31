@@ -1,0 +1,11 @@
+﻿
+
+@model IEnumerable<string>
+
+<h3>10 tinten grijs</h3>
+
+@foreach (var color in Model)
+{
+    <div style=" width:75px; height:50px;background:@color;display: inline-block"></div>
+}
+
