@@ -2,6 +2,51 @@
     ViewData["Title"] = "Home Page";
 }
 
+<ul>
+    <li><a href="Colour/index">Kleuren Generator</a> </li>
+
+    <li>
+        @Html.ActionLink(
+   linkText :"Kleuren generator (20 kleuren)",
+   actionName:"Index",
+   controllerName: "Colour",
+   routeValues: new
+   {
+       amountOfColours =  20
+   },
+   htmlAttributes :null
+   )
+    </li>
+
+    <li>
+        @Html.ActionLink(
+        linkText : "DNS Resolutie: amazon.com",
+        actionName:"Resolve",
+        controllerName: "Dns",
+        routeValues: new
+        {
+            hostname =  "amazon.com"
+        },
+        htmlAttributes :null
+        )
+    </li>
+
+
+    <li>
+        @Html.ActionLink(
+       linkText : "DNS Resolutie: cloudflare.com",
+       actionName:"Resolve",
+       controllerName: "Dns",
+       routeValues: new
+       {
+           hostname =  "cloudflare.com"
+       },
+       htmlAttributes :null
+      )
+    </li>
+</ul>
+    
+
      
 
 <div class="text-center">
