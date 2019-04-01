@@ -15,29 +15,29 @@ namespace PE1.A.Rodriguez.Web.Controllers
             var cssColours = new ColourService();
            
             var stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine($"<h2>10 kleuren</h2>");
-            foreach (string s in ColourService.GenerateCssColours(10))
+            stringBuilder.AppendLine($"<h2>{amountOfColours} kleuren</h2>");
+            foreach (string s in ColourService.GenerateCssColours(amountOfColours))
             {
                 stringBuilder.AppendLine($"<div style =\"width:75px; height:50px; display:inline-block; background:{s};\"></div>");
             }
-            stringBuilder.AppendLine($"<h2>10 tinten grijs</h2>");
-            foreach (string grijs in ColourService.GenerateGreyScales(10))
+            stringBuilder.AppendLine($"<h2>{amountOfColours} tinten grijs</h2>");
+            foreach (string grijs in ColourService.GenerateGreyScales(amountOfColours))
             {
                 stringBuilder.AppendLine($"<div style =\"width:75px; height:50px; background:{grijs} ; display:inline-block;\"></div>");
             }
             stringBuilder.AppendLine($"<h2>Kleur variaties (Rood, Groen en Blauw)</h2>");
 
-            foreach (string rood in ColourService.GenerateCssColours(10, ColourService.ColourVariant.Reddish))
+            foreach (string rood in ColourService.GenerateCssColours(amountOfColours, ColourService.ColourVariant.Reddish))
             {
                 stringBuilder.AppendLine($"<div style =\"width:75px; height:50px; background:{rood} ; display:inline-block;\"></div>");
             }
             stringBuilder.AppendLine($"</br>");
-            foreach (string rood in ColourService.GenerateCssColours(10, ColourService.ColourVariant.Greenish))
+            foreach (string rood in ColourService.GenerateCssColours(amountOfColours, ColourService.ColourVariant.Greenish))
             {
                 stringBuilder.AppendLine($"<div style =\"width:75px; height:50px; background:{rood} ; display:inline-block;\"></div>");
             }
             stringBuilder.AppendLine($"</br>");
-            foreach (string rood in ColourService.GenerateCssColours(10, ColourService.ColourVariant.Blueish))
+            foreach (string rood in ColourService.GenerateCssColours(amountOfColours, ColourService.ColourVariant.Blueish))
             {
                 stringBuilder.AppendLine($"<div style =\"width:75px; height:50px; background:{rood} ; display:inline-block;\"></div>");
             }
